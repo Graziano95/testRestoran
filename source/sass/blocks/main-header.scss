@@ -1,0 +1,73 @@
+@import './mixins.scss';
+@import './variable.scss';
+
+.main-header__nav--closed .main-header-nav__list{
+    @include mobile-width-only {
+       display: none;
+    }
+}
+
+.main-header__toggle {
+    position: absolute;
+    top: 37px;
+    right: 12px;
+    z-index: 2;
+    display: block;
+    width: 57px;
+    height: 55px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  
+    @include tablet {
+      display: none;
+    }
+  }
+
+.main-header__nav--closed .main-header__toggle::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 17px;
+    width: 33px;
+    height: 4px;
+    background-color: black;
+    box-shadow: 0 9px 0 0 black, 0 18px 0 0 black;
+}
+
+.main-header__nav--opened .main-header__toggle {
+    top: 27px;
+    right: 0;
+    left: auto;
+    z-index: 11;
+  
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 17px;
+      right: 20px;
+      width: 23px;
+      height: 3px;
+      background-color: #828282;
+    }
+  
+    &::before {
+      transform: rotate(45deg);
+      box-shadow: none;
+    }
+  
+    &::after {
+      transform: rotate(-45deg);
+    }
+}
+
+.main-header__nav--opened {
+    @include mobile-width-only {
+        position: absolute;
+        width: 100%;
+        min-height: 780px;
+        background-color: white;
+        max-width: 100%;
+    }
+}

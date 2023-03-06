@@ -1,0 +1,33 @@
+@import './mixins.scss';
+@import './variable.scss';
+
+.social {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.social__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-top: 87px;
+    width: 342px;
+    justify-content: space-between;
+
+    @include mobile-width-only {
+        max-width: 90%;
+    }
+}
+
+.social__description {
+    margin-top: 45px;
+    font-family: "Gilroy-Medium", sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #828282;
+    margin-bottom: 0;
+}

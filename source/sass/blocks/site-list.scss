@@ -1,0 +1,41 @@
+@import './mixins.scss';
+@import './variable.scss';
+
+.site-list {
+    font-family: "Gilroy-Bold", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 0;
+    margin: 0;
+    justify-content: space-between;
+    list-style-type: none;
+    border-bottom: 1px solid #828282;  
+
+    @include mobile-width-only {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        border: none;
+    }
+}
+
+.site-list__link {
+    text-decoration: none;
+    color: #828282;
+}
+
+.site-list__link--home {
+    color: #070707;
+}
+
+.site-list__item {
+    @include mobile-width-only {
+        font-family: 'Gilroy-Bold';
+        font-size: 34px;
+        line-height: 42px;
+        margin-bottom: 68px;
+        margin-left: 26px;
+    }
+}
