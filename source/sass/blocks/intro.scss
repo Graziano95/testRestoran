@@ -38,6 +38,7 @@
         rotate: 90deg;
         font-size: 34px;
         line-height: 42px;
+        z-index: 1;
     }
 }
 
@@ -53,8 +54,6 @@
 .intro__image {
     text-align: center;
     width: 100%;
-    max-width: 936px;
-    width: 90%;
 
     @include mobile-width-only {
         max-width: 316px;
@@ -80,20 +79,30 @@
     color: #828282;
 }
 
+.gallery {
+    margin: 20px auto;
+    overflow: hidden;
+}
+
 .photo {
-    position: relative;
+    display: flex;
+    transition: all ease 1s;
 }
 
-.photo img {
-    width: 100%;
-    opacity: 0;
-    left: 0;
+.slider-prev, .slider-next {
+    @include mobile-width-only {
+        display: none;
+    }
 }
 
-.photo img.shown {
-    opacity: 1;
-}
+// .slider-prev {
+//     position: absolute;
+//     left: 108px;
+//     bottom: 253px;
+// }
 
-.tabs {
-    text-align: center;
-}
+// .slider-next {
+//     position: absolute;
+//     right: 105px;
+//     bottom: 253px;
+// }

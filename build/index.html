@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
     
 </head>
@@ -54,22 +55,26 @@
                     <a class="intro__change-eng link__active" href="./index.html">ENG</a>
                 </p>
             </div>
-            <!-- <div class="gallery">
-                <div class="photo"> -->
+             <div class="intro__gallery gallery container">
+                <div class="intro__photo photo"> 
                     <picture>
-                    <source type="image/webp" media="(min-width: 376px)" srcset="img/photoDesigner.webp 1x, img/photoDesigner@2x.webp 2x">
-                    <source type="image/webp" media="(max-width: 376px)" srcset="img/photoMobile.webp 1x, img/photoMobile@2x.webp 2x">
-                    <source media="(max-width: 376px)" srcset="img/photoMobile.jpg 1x, img/photoMobile@2x.jpg 2x">
-                    <img class="intro__image shown" alt="фото дизайнера" src="./img/photoDesigner.jpg" srcset="./img/photoDesigner@2x.jpg 2x">
+                        <source type="image/webp" media="(min-width: 376px)" srcset="img/photoDesigner.webp 1x, img/photoDesigner@2x.webp 2x">
+                        <source type="image/webp" media="(max-width: 376px)" srcset="img/photoMobile.webp 1x, img/photoMobile@2x.webp 2x">
+                        <source media="(max-width: 376px)" srcset="img/photoMobile.jpg 1x, img/photoMobile@2x.jpg 2x">
+                        <img class="intro__image shown" alt="фото дизайнера" src="./img/photoDesigner.jpg" srcset="./img/photoDesigner@2x.jpg 2x" height="100%">
                     </picture>
-                    <!-- <img class="intro__image" src="img/photoTwo.jpg">
-                    <img class="intro__image" src="img/photoTree.jpg">
-                </div>
-                <div class="tabs">
-                    <input type="button" class="prev" value="назад">
-                    <input type="button" class="next" value="вперед">
-                </div>
-            </div> -->
+                    <picture>
+                        <source media="(max-width: 376px)" srcset="img/photoMobile.jpg 1x, img/photoMobile@2x.jpg 2x">
+                        <img class="intro__image" src="img/photoTwo.jpg">
+                    </picture>
+                    <picture>
+                        <source media="(max-width: 376px)" srcset="img/photoMobile.jpg 1x, img/photoMobile@2x.jpg 2x">
+                        <img class="intro__image" src="img/photoTree.jpg">
+                    </picture>
+                </div>       
+            </div> 
+            <button class="intro__button slider-prev"><</button>
+            <button class="intro__button slider-next">></button>
         </section>
         <section class="about" id="about">
             <div class="about__wrapper container">

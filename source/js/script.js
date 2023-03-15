@@ -23,40 +23,40 @@ navToggle.addEventListener('click', function () {
 });
 
 
-// class Slider {
-//   constructor(obj) {
-//     this.images = document.querySelectorAll(obj.images)
-//     this.btNexy = document.querySelector(obj.next)
-//     this.btPrev = document.querySelector(obj.prev)
-//     this.interval = obj.interval
-//     this.i = 0
-//     this.btNext.addEventListener("click", this.next.bind(this))
-//     this.btPrev.addEventListener("click", this.prev.bind(this))
-//     setInterval(this.next.bind(this), this.interval)
-//   }
+const images = document.querySelectorAll(".gallery .photo img");
+const photo = document.querySelector(".photo");
+let count = 0;
+let width;
 
-//   prev () {
-//     this.images[this.i].className = "";
-//     this.i--
-//     if(this.i < 0) {
-//       this.i = this.images.length - 1 
-//     }
-//     this.images[this.i].className = "shown";
-//   }
+function init() {
+  width = document.querySelector('.gallery').offsetWidth;
+  photo.style.width = width * images.length + 'px';
+  images.forEach(item => {
+      item.style.width = width + 'px';
+  });
+  rollSlider();
+}
 
-//   next () {
-//     this.images[this.i].className = "";
-//     this.i++
-//     if(this.i >= this.images.length) {
-//       this.i = 0 
-//     }
-//     this.images[this.i].className = "shown";
-//   }
-// }
+init();
+window.addEventListener('resize', init);
 
-// new Slider({
-//   images: ".gallery . photo img",
-//   next: ".gallery .tabs .next",
-//   prev: ".gallery .tabs .prev",
-//   interval: "2000"
-// })
+document.querySelector('.slider-next').addEventListener('click', function () {
+  count++;
+  if (count >= images.length) {
+      count = 0;
+  }
+  rollSlider();
+});
+
+document.querySelector('.slider-prev').addEventListener('click', function () {
+  count--;
+  if (count < 0) {
+      count = images.length - 1;
+  }
+  rollSlider();
+});
+
+function rollSlider() {
+  photo.style.transform = 'translate(-' + count * width + 'px)';
+
+}
