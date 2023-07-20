@@ -1,6 +1,6 @@
 let navMain = document.querySelector('.main-header__nav');
 let navToggle = document.querySelector('.main-header__toggle');
-let changeLang = document.querySelector('.intro__change-languages');
+// let changeLang = document.querySelector('.intro__change-languages');
 
 navToggle.addEventListener('click', function () {
   if (navMain.classList.contains('main-header__nav--closed')) {
@@ -12,51 +12,128 @@ navToggle.addEventListener('click', function () {
   }
 });
 
-navToggle.addEventListener('click', function () {
-    if (changeLang.classList.contains('noJS')) {
-        changeLang.classList.remove('noJS');
-        changeLang.classList.add('YesJS');
-    } else {
-        changeLang.classList.add('noJS');
-        changeLang.classList.remove('YesJS');
+
+
+const slider = document.querySelector('.slider');
+const sliderTrack = document.querySelector('.slider-track');
+const sliderSlides = document.querySelectorAll('.slider-slide');
+const sliderNavItems = document.querySelectorAll('.slider-dot');
+
+let currentSlide = 0;
+
+function playSlider() {
+  setInterval(function() {
+    currentSlide++;
+    if(currentSlide >= sliderSlides.length) {
+      currentSlide = 0;
     }
-});
+    slideTo(currentSlide);
+  }, 5000);
+}
 
-
-const images = document.querySelectorAll(".gallery .photo img");
-const photo = document.querySelector(".photo");
-let count = 0;
-let width;
-
-function init() {
-  width = document.querySelector('.gallery').offsetWidth;
-  photo.style.width = width * images.length + 'px';
-  images.forEach(item => {
-      item.style.width = width + 'px';
+function slideTo(index) {
+  const slideWidth = sliderSlides[0].clientWidth;
+  sliderTrack.style.transform = `translateX(-${slideWidth * index}px)`;
+  sliderSlides.forEach(function(slide, slideIndex) {
+    if(slideIndex === index) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
   });
-  rollSlider();
+  currentSlide = index;
+  updateNav(currentSlide);
 }
 
-init();
-window.addEventListener('resize', init);
-
-document.querySelector('.slider-next').addEventListener('click', function () {
-  count++;
-  if (count >= images.length) {
-      count = 0;
-  }
-  rollSlider();
-});
-
-document.querySelector('.slider-prev').addEventListener('click', function () {
-  count--;
-  if (count < 0) {
-      count = images.length - 1;
-  }
-  rollSlider();
-});
-
-function rollSlider() {
-  photo.style.transform = 'translate(-' + count * width + 'px)';
-
+function updateNav(index) {
+  sliderNavItems.forEach(function(item, itemIndex) {
+    if(itemIndex === index) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
 }
+
+sliderNavItems.forEach(function(item, index) {
+  item.addEventListener('click', function() {
+    slideTo(index);
+  });
+});
+
+slideTo(currentSlide);
+playSlider();
+
+
+// // определяем ссылку и высоту окна
+// const link = document.querySelector(".animate");
+// const windowHeight = window.innerHeight;
+
+// // добавляем обработчик событий, который будет отслеживать прокрутку страницы
+// window.addEventListener("scroll", () => {
+//   // определяем, насколько далеко от верха страницы находится верхняя граница ссылки
+//   const linkPosition = link.getBoundingClientRect().top;
+  
+//   // если верхняя граница ссылки находится на расстоянии меньше, чем окно браузера
+//   // то добавляем к ссылке класс, который запускает анимацию
+//   if (linkPosition < windowHeight) {
+//     link.classList.add("animate-link");
+//   }
+// });
+
+// // определяем элемент и высоту окна
+// const element = document.querySelector(".animate-me");
+// const windowHeight = window.innerHeight;
+
+// // добавляем обработчик событий, который будет отслеживать прокрутку страницы
+// window.addEventListener("scroll", () => {
+//   // определяем, насколько далеко от верха страницы находится граница элемента
+//   const elementPosition = element.getBoundingClientRect().top;
+  
+//   // если граница элемента находится на расстоянии меньше, чем окно браузера
+//   // то добавляем к нему класс, который запускает анимацию
+//   if (elementPosition < windowHeight) {
+//     element.classList.add("animate");
+//   }
+// });
+
+
+
+const backToTopButton = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    backToTopButton.classList.add('show');
+  } else {
+    backToTopButton.classList.remove('show');
+  }
+});
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo(0, 0);
+});
+
+
+
+
+let modal = document.getElementById("myModal");
+let modalDiv = document.getElementById("modal-div");
+let span = document.getElementsByClassName("close")[0];
+
+function loadDiv() {
+  modal.style.display = "block";
+}
+
+setTimeout(function() {
+  loadDiv();
+}, 10000);
+
+span.onclick = function() {
+  modal.style.display = "none";
+};
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};

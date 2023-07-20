@@ -1,3 +1,37 @@
 .link__active {
    color: #000000; 
 }
+
+.link:hover {
+   opacity: 0.5;
+}
+
+.link:active {
+   opacity: 0.3;
+}
+
+.animate-link {
+   position: relative;
+   display: inline-block;
+   padding: 10px 20px;
+   color: #333;
+   text-decoration: none;
+ }
+ 
+.animate-link::before {
+   content: "";
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 3px;
+   background-color: #fff;
+   transform: scaleX(0);
+   transform-origin: bottom left;
+   transition: transform 0.5s ease;
+}
+ 
+.animate-link:hover::before {
+   transform: scaleX(1);
+   transform-origin: bottom right;
+}

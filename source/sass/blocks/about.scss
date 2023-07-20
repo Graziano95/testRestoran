@@ -1,9 +1,51 @@
 .about__wrapper {
-    text-align: center;
-    padding-top: 120px;
-    padding-bottom: 107px;
+    text-align: start;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    position: relative;
 }
 
 .about {
-    background: #F6F6F6;
+    background: #000;
+    // background-image: url(/img/background-aboutUS.jpg);
+    // background-image: url(/img/video/back.gif);
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: cover;
+    color: #ffffff;
+    overflow: hidden;
+    position: relative;
 }
+
+video-background {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+  }
+  
+  .video-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  @media (max-width: 767px) {
+    .video-background video {
+      height: auto;
+    }
+  }

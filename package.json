@@ -40,5 +40,8 @@
     "not op_mini all",
     "not < 0.25%"
   ],
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "swiper": "^9.3.2"
+  }
 }

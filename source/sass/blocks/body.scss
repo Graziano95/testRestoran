@@ -1,6 +1,99 @@
 body {
-    font-family: "Gilroy-Medium", sans-serif;
-    font-size: 18px;
-    line-height: 22px;
+    font-family: "Bebas Neue Bold", sans-serif;
+    font-size: 23px;
+    line-height: 31px;
+    margin: 0;
+    background-color: rgb(255, 64, 0);
+}
+
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 50%;
+    right: 20px;
+    z-index: 99;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    opacity: 0.7;
+}
+  
+.back-to-top.show {
+    display: block;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal .contacts {
+    border: 0;
+}
+  
+.modal-content {
+    position: relative;
+    top: 15%;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+}
+  
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+.running-text {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+.running-text p {
+    display: inline-block;
+    animation: running-text 20s linear infinite normal;
     margin: 0;
 }
+
+@keyframes running-text {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+} 

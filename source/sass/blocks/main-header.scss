@@ -7,6 +7,12 @@
     }
 }
 
+.main-header__nav--closed .main-header__contacts{
+  @include mobile-width-only {
+    display: none;
+  }
+}
+
 .main-header__toggle {
     position: absolute;
     top: 37px;
@@ -18,9 +24,10 @@
     cursor: pointer;
     border: none;
     background-color: transparent;
-  
-    @include tablet {
-      display: none;
+    display: none;
+
+    @include mobile-width-only {
+      display: block;
     }
   }
 
@@ -31,8 +38,8 @@
     left: 17px;
     width: 33px;
     height: 4px;
-    background-color: black;
-    box-shadow: 0 9px 0 0 black, 0 18px 0 0 black;
+    background-color: #ff4000;
+    box-shadow: 0 9px 0 0#ff4000,0 18px 0 0#ff4000;
 }
 
 .main-header__nav--opened .main-header__toggle {
@@ -45,11 +52,11 @@
     &::after {
       content: "";
       position: absolute;
-      top: 17px;
-      right: 20px;
-      width: 23px;
+      top: 37px;
+      right: 19px;
+      width: 33px;
       height: 3px;
-      background-color: #828282;
+      background-color: #000;
     }
   
     &::before {
@@ -63,12 +70,56 @@
 }
 
 .main-header__nav--opened {
-    @include mobile-width-only {
-        position: absolute;
-        width: 100%;
-        min-height: 780px;
-        background-color: white;
-        max-width: 100%;
-        z-index: 1;
-    }
+  @include mobile-width-only {
+    position: relative;
+    width: 100%;
+    min-height: 545px;
+    max-width: 100%;
+    z-index: 1;
+  }
+}
+
+.header-hour {
+  max-width: 100%;
+}
+
+.header-hour-icon {
+  text-align: center;
+}
+
+.header-hour-svg {
+  fill: #000;
+}
+
+.header-hour-text {
+  text-align: center;
+}
+
+.main-header__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mobile-width-only {
+    display: block;
+  }
+}
+
+.main-header__contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mobile-width-only {
+    padding-bottom: 20px;
+  }
+}
+
+.main-header__link {
+  width: 43px;
+  margin-right: 20px;
+}
+
+.main-header__image {
+  fill: none;
 }
