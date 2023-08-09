@@ -4,109 +4,75 @@
 .intro__wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-top: 40px;
+    align-items: start;
+    padding-top: 86px;
     padding-bottom: 31px;
     flex-direction: column;
 
+    @include tablet {
+        padding-top: 0;     
+    }
+
     @include mobile-width-only {
         align-items: flex-start;
-        padding-top: 100px;
-    }
-}
-
-.intro__change-languages {
-    position: relative;
-    left: 17px;
-    rotate: -90deg;
-    font-family: "Gilroy-Bold", sans-serif;
-    font-size: 16px;
-    line-height: 20px;
-}
-
-.noJS {
-    @include mobile-width-only {
-        display: none;
-    }
-}
-
-.YesJS {
-    @include mobile-width-only {
-        position: absolute;
-        bottom: -60px;
-        left: auto;
-        right: -25px;
-        rotate: 90deg;
-        font-size: 34px;
-        line-height: 42px;
-        z-index: 1;
+        padding-top: 40px;
     }
 }
 
 .intro__title {
-    font-family: "Gilroy-Bold", sans-serif;
-    font-size: 47px;
-    line-height: 59px;
+    font-family: "Poppins-Bold", sans-serif;
+    line-height: 88px;
+    font-size: 64px;
     margin: 0;
     text-align: start;
+
+    @include tablet {
+        color: #000;   
+    }
+
+    @include mobile-width-only {
+        line-height: 75px;
+        font-size: 31px;
+    }
 }
 
 .intro__image {
     text-align: center;
-    width: 100%;
+    display: none;
+
+    @include tablet {
+        display: block;     
+    }
 
     @include mobile-width-only {
-        max-width: 316px;
+        max-width: 90%;
     }
 }
 
 .intro {
     text-align: center;
-    background-color: rgb(0, 0, 0);
-    color: orangered;
-
+    color: #fff;
+    margin-bottom: 60px;
 }
 
 .intro__description {
     color: #ffffff;
     text-align: center;
-}
 
-.intro__change-ru {
-    text-decoration: none;
-    color: #828282;
-}
-
-.intro__change-eng {
-    text-decoration: none;
-    color: #828282;
-}
-
-.gallery {
-    margin: 20px auto;
-    overflow: hidden;
-}
-
-.photo {
-    display: flex;
-    transition: all ease 1s;
-}
-
-.slider-prev, .slider-next {
-    @include mobile-width-only {
-        display: none;
+    @include tablet {
+        color: #000;       
     }
 }
 
 .intro__logo {
     width: 100%;
     max-width: 300px;
-}
 
-.slider-container {
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
+    @include mobile-width-only {
+        display: flex;
+        margin: auto;
+        width: 90%;
+    }
 }
   
 .slider {
@@ -114,58 +80,70 @@
     width: 100%;
     height: 100%;
 }
-  
-.slider-track {
-    display: flex;
-    width: 100%;
-    height: 400px;
-    transition: transform 0.5s ease;
-}
-  
-.slider-slide {
-    flex-shrink: 0;
-    width: 100%;
-}
-  
-.slider-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-  
-.slider-nav {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-}
-  
-.slider-dot {
-    width: 12px;
-    height: 12px;
-    margin: 0 6px;
-    border-radius: 50%;
-    background-color: #ccc;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
-}
-  
-.slider-dot.active {
-    background-color: #fff;
-}
-  
-  /* Анимация слайдера */
-.slider-slide {
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-}
-  
-.slider-slide.active {
-    opacity: 1;
-}
 
 .intro-category {
     margin: 5px;
     text-align: start;
+}
+
+.intro__button {
+    padding: 38px 65px 38px 64px;
+    color: #fff;
+    background-color: #3A4574;
+    border: 0;
+    font-size: 18px;
+    line-height: 24px;
+    cursor: pointer;
+    font-family: "Poppins-regular", sans-serif;
+}
+
+.intro__button:hover {
+    opacity: 0.9;
+}
+
+.intro__button:active {
+    opacity: 0.8;
+}
+
+.intro__social-item {
+    list-style: none;
+}
+
+.intro__social-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mobile-width-only {
+        padding: 0;
+     }
+}
+
+.intro__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 265px;
+
+    @include tablet {
+        padding-bottom: 40px;     
+    }
+
+    @include mobile-width-only {
+       display: flex;
+       flex-direction: column;
+    }
+}
+
+.intro__social-nav {
+    display: none;
+
+    @include mobile-width-only {
+        display: block;
+     }
+}
+
+.intro__social {
+    @include mobile-width-only {
+        display: none;
+     }
 }

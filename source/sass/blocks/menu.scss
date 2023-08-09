@@ -1,0 +1,116 @@
+.menu__item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px #E7E7E7 solid;
+}
+
+.menu__container {
+    display: flex;
+    align-items: center;
+}
+
+.menu__title {
+    font-family: "Poppins-semibold", sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.menu__dish {
+    font-size: 18px;
+    line-height: 32px;
+    margin-right: 12px;
+}
+
+.menu__description {
+    font-size: 18px;
+    line-height: 32px;
+    margin-left: 12px;
+    margin-bottom: 20px;
+}
+
+.menu__icon--right {
+    margin-right: 12px;
+}
+
+@import './mixins.scss';
+@import './variable.scss';
+
+.menu__square {
+    width: 471px;
+    height: 502px;
+    border: 2px #D3B47F solid;
+    margin-left: 131px;
+    position: relative;
+
+    @include mobile-width-only {
+        width: 230px;
+        height: 250px;
+        margin-left: 0;
+        margin-bottom: 84px;
+    }
+}
+
+.menu__wrapper {
+    display: flex;
+    align-items: center;
+
+    @include mobile-width-only {
+        flex-direction: column;
+    }
+}
+
+.menu__image--left {
+    position: absolute;
+    top: 101px;
+    left: -97px;   
+
+    @include tablet {
+        width: 70%;
+        height: 70%;
+        top: 216px;
+    }
+
+    @include desktop {
+        width: 70%;
+        height: 70%;
+        left: -36px;
+        top: 293px;
+    }
+
+    @include mobile-width-only {
+        top: 118px;
+        left: 0px;
+    }
+}
+
+.menu__image--right {
+    position: absolute;
+    top: -67px;
+    left: 248px;
+
+    @include tablet {
+        width: 70%;
+        height: 70%;
+        left: 79px;
+    }
+
+    @include desktop {
+        width: 70%;
+        height: 70%;
+        left: 127px
+    }
+
+    @include mobile-width-only {
+        left: 70px;
+    }
+}
+
+.menu__list {
+    margin: 0;
+    margin-bottom: 178px;
+    padding: 0;
+    
+}

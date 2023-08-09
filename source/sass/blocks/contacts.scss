@@ -1,23 +1,4 @@
-.contacts {
-    text-align: center;
-    padding-bottom: 25px;
-    border-bottom: 2px solid;
-}
-
-.contacts__title {
-    margin-bottom: 20px;
-}
-
-.contacts__description {
-    margin-bottom: 30px;
-}
-
 .contacts__image {
     max-width: 200px;
     fill: #000000;
-}
-
-.contacts__image:hover {
-    fill-opacity: 1;
-  stroke-opacity: 0;
 }

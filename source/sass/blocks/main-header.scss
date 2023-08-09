@@ -15,7 +15,7 @@
 
 .main-header__toggle {
     position: absolute;
-    top: 37px;
+    top: 68px;
     right: 12px;
     z-index: 2;
     display: block;
@@ -38,12 +38,12 @@
     left: 17px;
     width: 33px;
     height: 4px;
-    background-color: #ff4000;
-    box-shadow: 0 9px 0 0#ff4000,0 18px 0 0#ff4000;
+    background-color: #000;
+    box-shadow: 0 9px 0 0#000,0 18px 0 0#000;
 }
 
 .main-header__nav--opened .main-header__toggle {
-    top: 27px;
+    top: 68px;
     right: 0;
     left: auto;
     z-index: 11;
@@ -57,6 +57,10 @@
       width: 33px;
       height: 3px;
       background-color: #000;
+
+      @include mobile-width-only {
+        background-color: #000;
+      }
     }
   
     &::before {
@@ -79,26 +83,16 @@
   }
 }
 
-.header-hour {
-  max-width: 100%;
-}
-
-.header-hour-icon {
+.main-header__tel {
   text-align: center;
-}
-
-.header-hour-svg {
-  fill: #000;
-}
-
-.header-hour-text {
-  text-align: center;
+  margin-left: 12px;
 }
 
 .main-header__nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding-top: 19px;
 
   @include mobile-width-only {
     display: block;
@@ -112,6 +106,9 @@
 
   @include mobile-width-only {
     padding-bottom: 20px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -122,4 +119,16 @@
 
 .main-header__image {
   fill: none;
+}
+
+.main-header {
+  background-image: url(/img/back-header.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include tablet {
+    background-color: #fff;
+    background-image: none;
+  }
 }

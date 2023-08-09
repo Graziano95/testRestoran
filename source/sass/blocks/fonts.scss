@@ -1,17 +1,23 @@
 @font-face {
-	font-family: 'Gilroy-Medium';
-	src: url('../../fonts/gilroy-medium.woff2') format('woff2'), /* Super Modern Browsers */
-		 url('../../fonts/gilroy-bold.woff') format('woff'); /* Firefox >= 3.6, any other modern browser */
+	font-family: 'Poppins-Medium';
+	src: url('../../fonts/Poppins-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../../fonts/Poppins-Medium.woff') format('woff'); /* Firefox >= 3.6, any other modern browser */
 }
 
 @font-face {
-	font-family: 'Gilroy-Bold';
-	src: url('../../fonts/gilroy-bold.woff2') format('woff2'), /* Super Modern Browsers */
-		 url('../../fonts/gilroy-bold.woff') format('woff'); /* Firefox >= 3.6, any other modern browser */
+	font-family: 'Poppins-Bold';
+	src: url('../../fonts/Poppinsbold.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../../fonts/Poppinsbold.woff') format('woff'); /* Firefox >= 3.6, any other modern browser */
 }
 
 @font-face {
-	font-family: 'Bebas Neue Bold';
-	src: url('../../fonts/bebas-neue-bold.woff2') format('woff2'), /* Super Modern Browsers */
-		 url('../../fonts/bebas-neue-bold.woff') format('woff'); /* Firefox >= 3.6, any other modern browser */
+	font-family: 'Poppins-regular';
+	src: url('../../fonts/Poppinsregular.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../../fonts/Poppinsregular.woff') format('woff'); /* Firefox >= 3.6, any other modern browser */
+}
+
+@font-face {
+	font-family: 'Poppins-semibold';
+	src: url('../../fonts/Poppins-semibold.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../../fonts/Poppins-semibold.woff') format('woff'); /* Firefox >= 3.6, any other modern browser */
 }

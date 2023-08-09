@@ -2,7 +2,6 @@
 @import './variable.scss';
 
 .site-list {
-    font-family: "Bebas Neue Bold", sans-serif;
     display: flex;
     flex-wrap: wrap;
     padding-left: 0;
@@ -24,9 +23,22 @@
 
 .site-list__link {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #fff;
     padding-top: 32px;
     padding-bottom: 32px;
+    font-size: 16px;
+
+    @include tablet {
+        color: #000;       
+    }
+
+    @include mobile-width-only {
+        display: inline-block;
+        width: 90%;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: 25px;
+    }
 }
 
 .site-list__link--home {
@@ -38,12 +50,14 @@
     padding-bottom: 32px;
 
     @include mobile-width-only {
-        font-family: "Bebas Neue Bold", sans-serif;
+        font-family: "Poppins-Bold",sans-serif;
         font-size: 34px;
         line-height: 42px;
-        margin-bottom: 50px;
-        margin-left: 26px;
         padding-top: 0;
+        border-bottom: 1px grey solid;
+        display: inline-block;
+        width: 90%;
+        padding: 0;
     }
 }
 

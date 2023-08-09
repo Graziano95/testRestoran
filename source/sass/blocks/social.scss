@@ -33,3 +33,40 @@
     color: #000;
     margin-top: 20px;
 }
+
+.social__button {
+    border-radius:50%;
+    color: #fff;
+    background-color: inherit;
+    padding: 12px 13px 12px 13px;
+    border-color: #fff;
+    cursor: pointer;
+    font-family: "Poppins-regular", sans-serif;
+    border-style: solid;
+
+    @include tablet {
+        color: #000;  
+        border-color: #000;      
+    }
+}
+
+.social__link--fb {
+    margin-right: 25px;
+}
+
+.social__link--ig {
+    margin-right: 25px;
+    
+}
+
+.social__link--tw {
+    margin-right: 25px;
+}
+
+.social__button--ig {
+    padding: 12px 17px 12px 15px;
+}
+
+.social__button--Yt {
+    padding: 12px 16px 12px 15px;
+}

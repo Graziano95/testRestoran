@@ -1,0 +1,45 @@
+@import './mixins.scss';
+@import './variable.scss';
+
+.swiper-button-next:after {
+    color: #D3B47F;
+}
+
+.swiper-button-prev:after {
+    color: #fff;
+}
+
+.swiper-title {
+    font-family: "Poppins-semibold", sans-serif;
+    color: #D3B47F;
+    font-size: 36px;
+    line-height: 40px;
+    margin-top: 34px;
+    margin-bottom: 20px;
+}
+
+.swiper-description {
+    max-width: 785px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+
+    @include mobile-width-only {
+        max-width: 70%;
+    }
+}
+
+.swiper-autor {
+    font-family: "Poppins-semibold", sans-serif;
+    color: #D3B47F;
+    font-size: 24px;
+    line-height: 40px;
+    margin: 0;
+    letter-spacing: 6px;
+}
+
+.swiper-pagination {
+    display: none;
+}
